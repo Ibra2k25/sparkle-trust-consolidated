@@ -1,7 +1,27 @@
 {
-  "name": "stc-backend",
+  "name": "sparkle-trust-consolidated",
   "version": "1.0.0",
-  "main": "server.js",
-  "scripts": { "start": "node server.js" },
-  "dependencies": { "cors": "^2.8.5", "express": "^4.18.2" }
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "next": "^16.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8",
+    "autoprefixer": "^10.0.1"
+  }
 }

@@ -13,10 +13,12 @@ app.use(express.json());
 
 function makeToken(){ return 'stc-' + Date.now() + '-' + Math.random().toString(36).slice(2,10); }
 
-// Login - minimal, checks hardcoded credentials and returns token
+// Login - checks environment variables for credentials
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body || {};
-  if(username === 'MabelHeath' && password === 'Heathmabel209@'){
+  const validUsername = process.env.AUTH_USERNAME || 'user';
+  const validPassword = process.env.AUTH_PASSWORD || 'password';
+  if(username === validUsername && password === validPassword){
     const data = load();
     const token = makeToken();
     data.tokens = data.tokens || [];
